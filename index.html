@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>Kọ́nà Airform Mule | Bos’ Kọ́nà Waitlist</title>
+<style>
+:root{--black:#090909;--white:#f7f5ef;--yellow:#f2d400;--muted:#aaa79e;--line:rgba(255,255,255,.2);--display:Impact,"Arial Narrow",sans-serif;--body:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--white);font-family:var(--body);overflow-x:hidden}
+button,input{font:inherit}button{cursor:pointer}a{color:inherit}
+.grain:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E")}
+.denim-texture{position:relative;isolation:isolate}
+.denim-texture:after{content:"";position:absolute;inset:0;z-index:-1;opacity:.16;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.11) 3px 4px),repeating-linear-gradient(90deg,transparent 0 4px,rgba(0,0,0,.35) 4px 5px),repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0 1px,transparent 1px 7px)}
+header{position:absolute;z-index:3;top:0;left:0;width:100%;padding:22px 6vw;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-family:Georgia,serif;font-size:21px}
+.brand-mark{width:37px;height:30px;border:1px solid var(--white);display:grid;place-items:center;font-size:17px}
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.social{font-size:11px;line-height:1.8;text-align:right;color:#e7e4dc}
+.hero{min-height:100svh;padding:115px 7vw 55px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;background:radial-gradient(ellipse at 3% 4%,rgba(203,177,0,.35),transparent 24%),radial-gradient(ellipse at 98% 7%,rgba(211,185,0,.32),transparent 25%),radial-gradient(ellipse at 50% 45%,#242424 0,#111 43%,#050505 78%)}
+.hero:before,.hero:after{content:"";position:absolute;pointer-events:none}
+.hero:before{inset:0;opacity:.13;background:repeating-linear-gradient(125deg,transparent 0 22px,rgba(255,255,255,.09) 23px,transparent 24px 48px)}
+.hero:after{inset:auto 0 0;height:180px;background:linear-gradient(transparent,#090909)}
+.kicker{color:var(--yellow);text-transform:uppercase;letter-spacing:.28em;font-size:10px;font-weight:700}
+h1{font:italic 900 clamp(54px,10vw,130px)/.83 var(--display);letter-spacing:-.035em;text-transform:uppercase;margin:22px 0 18px;position:relative;z-index:1}
+.subline{font-size:clamp(16px,2.6vw,29px);font-style:italic;color:var(--yellow);line-height:1.15;position:relative;z-index:1}
+.subline strong{display:block;font-weight:500}
+.yellow-rule{width:210px;height:17px;border-top:3px solid var(--yellow);border-radius:50%;transform:rotate(-3deg);margin:12px auto 22px}
+.hero-collage{width:min(850px,94%);min-height:clamp(220px,34vw,340px);position:relative;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center;z-index:1}
+.photo-slot{height:clamp(220px,34vw,390px);position:relative;background:linear-gradient(135deg,rgba(255,255,255,.12),transparent 40%),repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 5px),#27323a;border:8px solid #d8d3c9;box-shadow:0 15px 45px #000;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.photo-slot:first-child{transform:rotate(-2deg);z-index:1}.photo-slot:nth-child(2){transform:rotate(2deg);background-color:#384b5b}
+.photo-slot:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 5px,rgba(255,255,255,.06) 5px 6px)}
+.photo-slot span{position:relative;z-index:1;max-width:190px;padding:12px;color:#f5f2e9;font:italic 19px/1.3 Georgia,serif;text-shadow:0 2px 8px #000}
+.photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.sticker{position:absolute;z-index:2;left:50%;top:48%;transform:translate(-50%,-50%) rotate(-7deg);border:2px solid white;border-radius:50%;padding:13px 24px;color:var(--yellow);font-weight:900;font-style:italic;font-size:22px;white-space:nowrap;text-shadow:0 2px 5px #000}
+.handnote{position:absolute;z-index:2;font:italic 18px Georgia,serif;color:#fff;text-shadow:0 2px 5px #000}
+.note-left{left:1%;top:12%;transform:rotate(-12deg)}.note-right{right:0;top:15%;transform:rotate(8deg)}
+.hero-foot{max-width:760px;position:relative;z-index:2;margin:19px auto 0;font-size:clamp(13px,1.8vw,17px);line-height:1.6;font-style:italic}
+.hero-foot em{color:var(--yellow);font-style:italic}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:13px;margin-top:22px;background:var(--yellow);color:#080808;padding:17px 28px;text-decoration:none;font:italic 900 15px var(--display);letter-spacing:.05em;text-transform:uppercase;clip-path:polygon(3% 0,100% 0,97% 100%,0 100%);transition:transform .2s,background .2s;position:relative;z-index:2;border:0}
+.cta:hover{transform:translateY(-3px);background:#ffe83a}
+.question-shell{width:min(610px,100%);margin:24px auto 0;position:relative;z-index:2;text-align:left;display:none}
+.question-shell.active{display:block}
+.question-card{border:1px solid rgba(255,255,255,.25);background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.02));padding:clamp(20px,4vw,34px);box-shadow:0 25px 80px rgba(0,0,0,.45);position:relative;overflow:hidden}
+.question-card:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.1;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.1) 3px 4px),repeating-linear-gradient(90deg,transparent 0 4px,rgba(0,0,0,.5) 4px 5px)}
+.card-content{position:relative;z-index:1}
+.card-top{display:flex;justify-content:space-between;color:var(--yellow);font-size:9px;letter-spacing:.18em;text-transform:uppercase}
+.progress{height:3px;background:#393939;margin:17px 0 25px}.progress-bar{height:100%;width:0;background:var(--yellow);transition:width .35s ease}
+.question-count{font-size:10px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
+.question{font:italic 32px/1.12 Georgia,serif;margin:13px 0 12px}
+.hint{font-size:12px;color:#aaa;margin:0 0 20px;line-height:1.5}
+.text-field{display:block;width:100%;padding:14px 3px;margin:8px 0 20px;background:transparent;border:0;border-bottom:1px solid #777;color:white;outline:none;font-size:16px}
+.text-field:focus{border-color:var(--yellow)}.text-field::placeholder{color:#85827b}
+.country-select{display:block;width:100%;padding:14px 10px;margin:8px 0 20px;background:#171717;border:1px solid rgba(255,255,255,.3);color:var(--white);outline:none;font-size:14px;border-radius:0}.country-select:focus{border-color:var(--yellow)}
+.field-label{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:#c9c5bb}
+.answers{display:grid;gap:9px}
+.answer{width:100%;padding:14px 15px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.035);color:var(--white);text-align:left;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;transition:.2s}
+.answer:hover,.answer:focus{border-color:var(--yellow);background:rgba(242,212,0,.09);outline:none}.answer b{color:var(--yellow);font-size:18px;font-weight:400}
+.actions{display:flex;justify-content:space-between;gap:12px;margin-top:23px}
+.action-btn{border:1px solid var(--yellow);background:var(--yellow);color:#090909;padding:13px 22px;font:italic 900 14px var(--display);text-transform:uppercase}
+.action-btn.ghost{background:transparent;color:var(--white);border-color:#777}
+.step-enter{animation:floatIn .48s cubic-bezier(.2,.75,.25,1) both}
+@keyframes floatIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.status{font-size:12px;line-height:1.6;color:#bdb8ad;margin-top:14px}
+@media(max-width:700px){header{padding:17px 5vw}.brand{font-size:17px}.social{font-size:9px}.hero{padding:105px 5vw 45px;min-height:100svh}.hero-collage{width:100%;min-height:240px;gap:8px}.photo-slot{height:clamp(200px,58vw,310px);border-width:5px}.sticker{font-size:16px;padding:10px 16px}.handnote{font-size:14px}.question{font-size:27px}.question-card{padding:22px 18px}}
+@media(max-width:390px){.hero-collage{min-height:215px}.photo-slot{height:220px}.hero-foot{font-size:12px}}
+
+/* Admin dashboard */
+body.admin-mode{background:#090909;color:#f7f5ef;overflow:auto;min-height:100vh}
+body.admin-mode header,body.admin-mode main{display:none}
+#adminApp{display:none;min-height:100vh;background:radial-gradient(ellipse at 85% 0%,rgba(242,212,0,.09),transparent 32%),#090909;color:#f7f5ef;font-family:Arial,Helvetica,sans-serif}
+body.admin-mode #adminApp{display:block}
+.admin-wrap{width:min(1500px,100%);margin:auto;padding:28px clamp(16px,3vw,42px) 60px}
+.admin-top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-bottom:22px;border-bottom:1px solid #333}
+.admin-brand{display:flex;align-items:center;gap:12px;font:italic 24px Georgia,serif}.admin-mark{width:38px;height:34px;border:1px solid #f2d400;display:grid;place-items:center;color:#f2d400;font:900 16px Georgia,serif}
+.admin-eyebrow{font-size:10px;letter-spacing:.2em;color:#f2d400;text-transform:uppercase;margin-bottom:7px}
+.admin-top-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.admin-btn{border:1px solid #f2d400;background:#f2d400;color:#090909;padding:11px 16px;font-weight:800;font-size:11px;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}
+.admin-btn.secondary{background:transparent;color:#f7f5ef;border-color:#555}.admin-btn:disabled{opacity:.5;cursor:wait}
+.admin-login{width:min(440px,calc(100% - 32px));margin:12vh auto;padding:30px;border:1px solid #444;background:#151515;box-shadow:0 24px 80px #0008}
+.admin-login h1{font:italic 42px/1 Georgia,serif;letter-spacing:-.03em;text-transform:none;margin:12px 0}.admin-login p{font-size:13px;color:#aaa;line-height:1.6}
+.admin-label{display:block;color:#c9c5bb;font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin:18px 0 7px}
+.admin-input,.admin-select{width:100%;padding:13px 12px;background:#090909;border:1px solid #555;color:#fff;border-radius:0;outline:none}.admin-input:focus,.admin-select:focus{border-color:#f2d400}
+.admin-message{font-size:12px;line-height:1.5;color:#f2d400;min-height:20px;margin-top:12px}.admin-content{display:none}
+.admin-heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:30px 0 22px}.admin-heading h1{font:italic 44px/.95 Georgia,serif;margin:0;letter-spacing:-.04em}.admin-heading p{font-size:12px;color:#aaa;margin:9px 0 0}
+.admin-tabs{display:flex;gap:7px;overflow:auto;padding:0 0 13px;border-bottom:1px solid #333;margin-bottom:22px}.admin-tab{white-space:nowrap;background:transparent;border:1px solid #3d3d3d;color:#bbb;padding:10px 14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer}.admin-tab.active{background:#f2d400;border-color:#f2d400;color:#090909;font-weight:800}
+.admin-panel{display:none}.admin-panel.active{display:block}
+.admin-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}.admin-card{background:#151515;border:1px solid #303030;padding:17px;min-width:0}.admin-card .k{font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:.15em}.admin-card .v{font:italic 34px/1 Georgia,serif;margin:12px 0 6px;color:#f2d400}.admin-card .s{font-size:11px;color:#888;line-height:1.5}
+.admin-two{display:grid;grid-template-columns:1.25fr 1fr;gap:14px}.admin-section{background:#151515;border:1px solid #303030;padding:18px;margin-bottom:14px;min-width:0}.admin-section h2{font:italic 23px Georgia,serif;margin:0 0 6px}.admin-section .sub{font-size:11px;color:#999;margin-bottom:16px;line-height:1.5}
+.admin-bars{display:grid;gap:12px}.admin-bar-row{display:grid;grid-template-columns:minmax(95px,1fr) minmax(80px,2fr) 42px;gap:10px;align-items:center;font-size:11px}.admin-bar-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#ddd}.admin-track{height:8px;background:#303030}.admin-fill{height:100%;background:#f2d400;min-width:0}.admin-bar-count{text-align:right;color:#f2d400;font-variant-numeric:tabular-nums}
+.admin-donut-wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.admin-donut{width:150px;height:150px;border-radius:50%;position:relative;flex:0 0 150px;background:#333}.admin-donut:after{content:"";position:absolute;inset:27px;border-radius:50%;background:#151515}.admin-donut-center{position:absolute;inset:0;z-index:1;display:grid;place-content:center;text-align:center;font:italic 28px Georgia,serif}.admin-donut-center small{font:9px Arial,sans-serif;color:#999;text-transform:uppercase;letter-spacing:.12em}.admin-legend{display:grid;gap:10px;font-size:11px}.admin-legend div{display:flex;gap:8px;align-items:center}.admin-dot{width:9px;height:9px;background:#f2d400;display:inline-block}.admin-dot.warm{background:#d79b36}.admin-dot.explore{background:#777}.admin-dot.unknown{background:#444}
+.admin-table-wrap{overflow:auto;border:1px solid #303030}.admin-table{width:100%;border-collapse:collapse;min-width:720px;font-size:11px}.admin-table th{text-align:left;background:#202020;color:#aaa;text-transform:uppercase;letter-spacing:.1em;font-size:9px;padding:12px;white-space:nowrap}.admin-table td{padding:12px;border-top:1px solid #2d2d2d;color:#ddd;vertical-align:top}.admin-table tr[data-lead]{cursor:pointer}.admin-table tr[data-lead]:hover td{background:#202020}.admin-pill{display:inline-block;padding:5px 7px;border:1px solid #555;font-size:9px;white-space:nowrap}.admin-pill.ready{border-color:#7b9e47;color:#c2e28c}.admin-pill.warm{border-color:#b17a28;color:#f0c078}.admin-pill.exploring{border-color:#666;color:#bbb}
+.admin-controls{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}.admin-controls .admin-input{max-width:300px}.admin-controls .admin-select{max-width:230px}
+.admin-note{font-size:11px;color:#999;line-height:1.6}.admin-empty{padding:28px;text-align:center;color:#999;font-size:12px}.admin-list{display:grid;gap:9px}.admin-list-item{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid #2e2e2e;padding:9px 0;font-size:11px}.admin-list-item span:last-child{color:#f2d400;font-variant-numeric:tabular-nums}
+.admin-modal{position:fixed;inset:0;background:#000c;z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.admin-modal.open{display:flex}.admin-modal-card{width:min(620px,100%);max-height:85vh;overflow:auto;background:#151515;border:1px solid #555;padding:22px}.admin-modal-head{display:flex;justify-content:space-between;gap:12px;align-items:start}.admin-modal-head h2{font:italic 27px Georgia,serif;margin:0}.admin-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.admin-detail{border-top:1px solid #333;padding-top:10px;min-width:0}.admin-detail small{display:block;color:#999;text-transform:uppercase;letter-spacing:.1em;font-size:9px;margin-bottom:6px}.admin-detail div{font-size:12px;overflow-wrap:anywhere;line-height:1.5}
+
+body.password-recovery-mode{background:#090909;color:#f7f5ef;min-height:100vh}
+body.password-recovery-mode header,body.password-recovery-mode main,body.password-recovery-mode #adminApp{display:none!important}
+body.password-recovery-mode #passwordRecoveryApp{display:block!important;min-height:100vh;padding:28px 16px;display:grid!important;place-items:center;background:radial-gradient(ellipse at 85% 0%,rgba(242,212,0,.09),transparent 32%),#090909}
+.password-recovery-card{width:min(440px,100%);padding:30px;border:1px solid #444;background:#151515;box-shadow:0 24px 80px #0008}
+.password-recovery-card h1{font:italic 42px/1 Georgia,serif;letter-spacing:-.03em;text-transform:none;margin:12px 0}
+.password-recovery-card p{font-size:13px;color:#aaa;line-height:1.6}
+@media(max-width:520px){.password-recovery-card{padding:23px}}
+
+@media(max-width:850px){.admin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-two{grid-template-columns:1fr}.admin-heading h1{font-size:36px}}
+@media(max-width:520px){.admin-wrap{padding:18px 13px 40px}.admin-top{align-items:flex-start}.admin-brand{font-size:19px}.admin-heading{align-items:flex-start;flex-direction:column}.admin-heading h1{font-size:34px}.admin-card{padding:13px}.admin-card .v{font-size:29px}.admin-login{padding:23px}.admin-detail-grid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body class="grain">
+<header>
+  <div class="brand">
+  <span class="brand-mark">
+    <img src="./kona-logo.png" alt="Bos’ Kọ́nà logo">
+  </span>
+  <span>Bos’ Kọ́nà</span>
+</div>
+  <div class="social">INSTAGRAM&nbsp; @bos_kona_collections<br> X&nbsp; @KonaBos555559</div>
+</header>
+<main>
+<section class="hero denim-texture" id="top">
+  <div class="kicker">The debut collection</div>
+  <h1>Join the<br>waitlist</h1>
+  <div class="subline">— The Debut Collection —<strong>Kọ́nà Airform Mule by Komfy Sole</strong></div>
+  <div class="yellow-rule"></div>
+  <div class="hero-collage">
+    <div class="photo-slot">
+  <img src="kona-campaign.png" alt="Kọ́nà campaign photograph">
+</div>
+    <div class="photo-slot">
+  <img src="kona-detail.jpeg" alt="Kọ́nà Airform Mule detail photograph">
+</div>
+    <div class="sticker">01 / DENIM</div>
+    <div class="handnote note-left">Authentic design</div>
+    <div class="handnote note-right">Handmade in Nigeria</div>
+  </div>
+  <p class="hero-foot">Artisanal footwear, designed to stand out.<br><em>In honour of the journey that brought our debut collection to life, a portion of proceeds from this launch will directly support Ore’s future endeavours.</em> Distinctive style. Lasting impact.</p>
+  <button class="cta" id="startButton" type="button">Secure your early access <span>↗</span></button>
+
+  <div class="question-shell" id="questionShell" aria-live="polite">
+    <div class="question-card"><div class="card-content">
+      <div class="card-top"><span>Bos’ Kọ́nà · Airform</span><span id="stepNumber">01 / 06</span></div>
+      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+      <div id="questionArea"></div>
+      <div class="status" id="status" role="status"></div>
+    </div></div>
+  </div>
+</section>
+</main>
+
+
+<div id="passwordRecoveryApp" style="display:none">
+  <section class="password-recovery-card">
+    <div class="admin-eyebrow">Bos’ Kọ́nà · Administrator</div>
+    <h1>Set a new password.</h1>
+    <p>Choose a new password for your administrator account. After saving it, return to the admin dashboard and sign in.</p>
+    <form id="passwordRecoveryForm">
+      <label class="admin-label" for="newAdminPassword">New password</label>
+      <input class="admin-input" id="newAdminPassword" type="password" autocomplete="new-password" minlength="8" required>
+      <label class="admin-label" for="confirmAdminPassword">Confirm new password</label>
+      <input class="admin-input" id="confirmAdminPassword" type="password" autocomplete="new-password" minlength="8" required>
+      <button class="admin-btn" id="passwordRecoveryButton" type="submit" style="width:100%;margin-top:20px">Save new password</button>
+    </form>
+    <div class="admin-message" id="passwordRecoveryMessage" role="status" aria-live="polite"></div>
+    <a id="passwordRecoveryLoginLink" href="/?mode=admin" style="display:none;color:#f2d400;font-size:12px">Go to administrator sign-in →</a>
+  </section>
+</div>
+
+<div id="adminApp" aria-live="polite">
+  <div class="admin-wrap">
+    <div class="admin-top">
+      <div><div class="admin-brand"><span class="admin-mark">K</span><span>Bos’ Kọ́nà</span></div><div class="admin-eyebrow" style="margin:8px 0 0 50px">Airform Mule · Waitlist intelligence</div></div>
+      <div class="admin-top-actions"><button class="admin-btn secondary" id="adminRefresh" type="button" style="display:none">Refresh data</button><button class="admin-btn secondary" id="adminExport" type="button" style="display:none">Export CSV</button><button class="admin-btn secondary" id="adminLogout" type="button" style="display:none">Sign out</button></div>
+    </div>
+    <section class="admin-login" id="adminLogin">
+      <div class="admin-eyebrow">Restricted access</div><h1>Admin access.</h1><p>Sign in with the administrator account to view waitlist registrations and performance insights.</p>
+      <form id="adminLoginForm">
+        <label class="admin-label" for="adminEmail">Administrator email</label><input class="admin-input" id="adminEmail" type="email" autocomplete="username" required>
+        <label class="admin-label" for="adminPassword">Password</label><input class="admin-input" id="adminPassword" type="password" autocomplete="current-password" required>
+        <button class="admin-btn" id="adminLoginButton" type="submit" style="width:100%;margin-top:20px">Sign in to dashboard</button>
+      </form><div class="admin-message" id="adminLoginMessage" role="status"></div>
+    </section>
+    <section class="admin-content" id="adminContent">
+      <div class="admin-heading"><div><div class="admin-eyebrow">Waitlist intelligence</div><h1>Dashboard overview.</h1><p id="adminUpdatedAt">Live data from your Supabase waitlist.</p></div><div class="admin-note">Private administrator view</div></div>
+      <nav class="admin-tabs" aria-label="Dashboard sections">
+        <button class="admin-tab active" data-tab="overview">Overview</button><button class="admin-tab" data-tab="leads">All leads</button><button class="admin-tab" data-tab="marketing">Marketing</button><button class="admin-tab" data-tab="geography">Geography</button><button class="admin-tab" data-tab="intent">Purchase intent</button><button class="admin-tab" data-tab="product">Product insights</button><button class="admin-tab" data-tab="earlybird">Early-bird</button>
+      </nav>
+      <section class="admin-panel active" id="panel-overview">
+        <div class="admin-grid" id="overviewCards"></div>
+        <div class="admin-two"><div class="admin-section"><h2>Registration activity</h2><div class="sub">Daily registrations over the last 14 days</div><div class="admin-bars" id="registrationTrend"></div></div><div class="admin-section"><h2>Buying interest</h2><div class="sub">Classification based on each person's stated purchase intent</div><div id="overviewIntent"></div></div></div>
+        <div class="admin-section"><h2>Latest registrations</h2><div class="sub">Most recent people to join the waitlist. Select a row to inspect the record.</div><div id="latestLeads"></div></div>
+      </section>
+      <section class="admin-panel" id="panel-leads">
+        <div class="admin-section"><h2>All registrations</h2><div class="sub">Search, filter and inspect individual waitlist records.</div><div class="admin-controls"><input class="admin-input" id="leadSearch" placeholder="Search name, phone, email or source"><select class="admin-select" id="leadIntentFilter"><option value="all">All intent categories</option><option value="ready">Ready to purchase</option><option value="warm">Needs information</option><option value="exploring">Exploring</option><option value="unknown">Unclassified</option></select><select class="admin-select" id="leadCountryFilter"><option value="all">All customer countries</option></select></div><div id="leadsTable"></div></div>
+      </section>
+      <section class="admin-panel" id="panel-marketing">
+        <div class="admin-section"><h2>Marketing attribution</h2><div class="sub">First touch shows the first tracked source. Latest touch shows the most recent tracked source before registration.</div><div class="admin-controls"><select class="admin-select" id="touchMode"><option value="first_touch">First-touch attribution</option><option value="latest_touch">Latest-touch attribution</option></select></div><div class="admin-two"><div><h2 style="font-size:19px">Registrations by source</h2><div class="admin-bars" id="sourceBars"></div></div><div><h2 style="font-size:19px">Individual post / advert</h2><div class="admin-bars" id="contentBars"></div></div></div></div>
+        <div class="admin-two"><div class="admin-section"><h2>Campaigns</h2><div class="sub">Registrations attributed to each campaign.</div><div class="admin-list" id="campaignList"></div></div><div class="admin-section"><h2>Ready-to-buy by source</h2><div class="sub">Shows which tracked sources are producing the strongest stated purchase intent.</div><div class="admin-list" id="sourceReadyList"></div></div></div>
+      </section>
+      <section class="admin-panel" id="panel-geography">
+        <div class="admin-two"><div class="admin-section"><h2>Customer residence</h2><div class="sub">Where people say they are based.</div><div class="admin-bars" id="customerCountryBars"></div></div><div class="admin-section"><h2>WhatsApp country</h2><div class="sub">Country selected for the WhatsApp calling code. This may differ from residence.</div><div class="admin-bars" id="whatsappCountryBars"></div></div></div>
+      </section>
+      <section class="admin-panel" id="panel-intent">
+        <div class="admin-section"><h2>Purchase-intent evaluation</h2><div class="sub">The dashboard interprets the exact questionnaire response. Exploring is not treated as a rejection; the form does not currently ask whether someone is uninterested.</div><div id="intentBreakdown"></div></div>
+        <div class="admin-section"><h2>Buying interest by source</h2><div class="sub">Compare ready-to-purchase and warm leads across first-touch sources.</div><div class="admin-bars" id="intentSourceBars"></div></div>
+      </section>
+      <section class="admin-panel" id="panel-product">
+        <div class="admin-two"><div class="admin-section"><h2>Product attraction</h2><div class="sub">What draws people most to the Airform Mule.</div><div class="admin-bars" id="productInterestBars"></div></div><div class="admin-section"><h2>Shoe-size demand</h2><div class="sub">Reported size ranges across registrations.</div><div class="admin-bars" id="shoeSizeBars"></div></div></div>
+        <div class="admin-section"><h2>Brand awareness</h2><div class="sub">How people describe their familiarity with Bos’ Kọ́nà.</div><div class="admin-bars" id="brandAwarenessBars"></div></div>
+      </section>
+      <section class="admin-panel" id="panel-earlybird">
+        <div class="admin-grid" id="earlyBirdCards"></div><div class="admin-section"><h2>Early-bird allocations</h2><div class="sub">The first 200 positions qualify for the launch early-bird benefit. This view reflects recorded positions; it does not issue wallet credit.</div><div id="earlyBirdTable"></div></div>
+      </section>
+    </section>
+  </div>
+  <div class="admin-modal" id="leadModal"><div class="admin-modal-card"><div class="admin-modal-head"><div><div class="admin-eyebrow">Registration record</div><h2 id="leadModalTitle">Lead details</h2></div><button class="admin-btn secondary" id="closeLeadModal" type="button">Close</button></div><div class="admin-detail-grid" id="leadDetails"></div></div></div>
+</div>
+
+<script>
+/*
+  SUPABASE SETUP
+  1. Replace the two values below with your Supabase project URL and anon/publishable key.
+  2. Deploy an Edge Function named "submit-waitlist" that validates and stores the submitted payload.
+  3. The function should return { "success": true } on success.
+  Keep privileged service-role keys inside the Edge Function only — never in this page.
+*/
+const SUPABASE_URL = "https://gdaabyeqocnrapfewzrx.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_plVi7NnICCPSvwm-y8LIHA_3aEpmUIE";
+const EDGE_FUNCTION_NAME = "submit-waitlist";
+
+const questions = [
+  {type:"text",q:"What's your name?",hint:"Let's start with an introduction.",key:"full_name",placeholder:"Enter your full name",required:true},
+  {type:"choice",q:"Have you encountered Bos’ Kọ́nà before?",hint:"We'd love to know how you found us.",key:"brand_awareness",options:["Yes, I already know the brand","I've just discovered Bos’ Kọ́nà","This is my first introduction"]},
+  {type:"choice",q:"What draws you most to the Airform Mule?",hint:"Choose the detail that catches your attention first.",key:"product_interest",options:["The distinctive design and silhouette","The denim material and detailing","The craftsmanship","The overall styling"]},
+  {type:"choice",q:"How would you describe your interest in this release?",hint:"Your answer helps us understand purchase intent.",key:"purchase_intent",options:["I'm interested in purchasing at launch","I'm interested, but need more information","I'm exploring the release for now"]},
+  {type:"choice",q:"What shoe size do you usually wear?",hint:"This is an initial indication. Final sizing guidance will be shared before launch.",key:"shoe_size",options:["EU 36–37","EU 38–39","EU 40–41","EU 42–43","EU 44–45","I'm not sure yet"]},
+  {type:"contact",q:"Where should we send your release updates?",hint:"Your details will only be used for relevant Bos’ Kọ́nà communication."}
+];
+const answers = {};
+let current = 0;
+const startButton = document.getElementById("startButton");
+const shell = document.getElementById("questionShell");
+const area = document.getElementById("questionArea");
+const progress = document.getElementById("progressBar");
+const stepNumber = document.getElementById("stepNumber");
+const status = document.getElementById("status");
+
+startButton.addEventListener("click", () => {
+  startButton.style.display = "none";
+  shell.classList.add("active");
+  render(true);
+});
+
+function animateQuestion(){
+  const cardContent = shell.querySelector(".card-content");
+  cardContent.classList.remove("step-enter");
+  void cardContent.offsetWidth;
+  cardContent.classList.add("step-enter");
+}
+
+function render(animate=false){
+  const item = questions[current];
+  stepNumber.textContent = String(current+1).padStart(2,"0")+" / "+String(questions.length).padStart(2,"0");
+  progress.style.width = ((current+1)/questions.length*100)+"%";
+  status.textContent = "";
+  if(item.type === "choice"){
+    area.innerHTML = `<div class="question-count">A quick question</div><div class="question">${item.q}</div><p class="hint">${item.hint}</p><div class="answers">${item.options.map((o,i)=>`<button class="answer" type="button" data-index="${i}"><span>${o}</span><b>→</b></button>`).join("")}</div><div class="actions"><button class="action-btn ghost" id="back" type="button">← Back</button></div>`;
+    area.querySelectorAll(".answer").forEach(btn=>btn.addEventListener("click",()=>{answers[item.key]=item.options[Number(btn.dataset.index)];next()}));
+  } else if(item.type === "text"){
+    area.innerHTML = `<div class="question-count">Question ${current+1}</div><div class="question">${item.q}</div><p class="hint">${item.hint}</p><label class="field-label" for="answerField">Full name</label><input class="text-field" id="answerField" autocomplete="name" placeholder="${item.placeholder}" value="${escapeAttr(answers[item.key]||"")}" ${item.required?"required":""}><div class="actions"><span></span><button class="action-btn" id="continue" type="button">Continue →</button></div>`;
+    document.getElementById("continue").addEventListener("click",()=>{const value=document.getElementById("answerField").value.trim();if(!value){status.textContent="Please enter your name to continue.";return}answers[item.key]=value;next()});
+    document.getElementById("answerField").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("continue").click()});
+  } else {
+    area.innerHTML = `<div class="question-count">Final question</div><div class="question">${item.q}</div><p class="hint">${item.hint}</p><label class="field-label" for="customerCountry">Which country are you based in?</label><select class="country-select" id="customerCountry" autocomplete="country-name"><option value="">Select your country</option></select><p class="hint">This is your country of residence, which may be different from your WhatsApp number's country code.</p><label class="field-label" for="country">WhatsApp country / calling code</label><select class="country-select" id="country" autocomplete="country-name">
+      <option value="Nigeria" data-code="+234" selected>Nigeria (+234)</option>
+      <option value="United Kingdom" data-code="+44">United Kingdom (+44)</option>
+      <option value="United States" data-code="+1">United States (+1)</option>
+      <option value="Canada" data-code="+1">Canada (+1)</option>
+      <option value="Ghana" data-code="+233">Ghana (+233)</option>
+      <option value="South Africa" data-code="+27">South Africa (+27)</option>
+      <option value="Kenya" data-code="+254">Kenya (+254)</option>
+      <option value="Uganda" data-code="+256">Uganda (+256)</option>
+      <option value="Tanzania" data-code="+255">Tanzania (+255)</option>
+      <option value="Rwanda" data-code="+250">Rwanda (+250)</option>
+      <option value="Ethiopia" data-code="+251">Ethiopia (+251)</option>
+      <option value="Egypt" data-code="+20">Egypt (+20)</option>
+      <option value="Morocco" data-code="+212">Morocco (+212)</option>
+      <option value="Algeria" data-code="+213">Algeria (+213)</option>
+      <option value="Tunisia" data-code="+216">Tunisia (+216)</option>
+      <option value="Senegal" data-code="+221">Senegal (+221)</option>
+      <option value="Côte d’Ivoire" data-code="+225">Côte d’Ivoire (+225)</option>
+      <option value="Cameroon" data-code="+237">Cameroon (+237)</option>
+      <option value="Benin" data-code="+229">Benin (+229)</option>
+      <option value="Togo" data-code="+228">Togo (+228)</option>
+      <option value="Liberia" data-code="+231">Liberia (+231)</option>
+      <option value="Sierra Leone" data-code="+232">Sierra Leone (+232)</option>
+      <option value="Gambia" data-code="+220">Gambia (+220)</option>
+      <option value="United Arab Emirates" data-code="+971">United Arab Emirates (+971)</option>
+      <option value="Saudi Arabia" data-code="+966">Saudi Arabia (+966)</option>
+      <option value="Qatar" data-code="+974">Qatar (+974)</option>
+      <option value="Kuwait" data-code="+965">Kuwait (+965)</option>
+      <option value="India" data-code="+91">India (+91)</option>
+      <option value="Pakistan" data-code="+92">Pakistan (+92)</option>
+      <option value="Bangladesh" data-code="+880">Bangladesh (+880)</option>
+      <option value="China" data-code="+86">China (+86)</option>
+      <option value="Hong Kong" data-code="+852">Hong Kong (+852)</option>
+      <option value="Japan" data-code="+81">Japan (+81)</option>
+      <option value="South Korea" data-code="+82">South Korea (+82)</option>
+      <option value="Singapore" data-code="+65">Singapore (+65)</option>
+      <option value="Malaysia" data-code="+60">Malaysia (+60)</option>
+      <option value="Indonesia" data-code="+62">Indonesia (+62)</option>
+      <option value="Philippines" data-code="+63">Philippines (+63)</option>
+      <option value="Thailand" data-code="+66">Thailand (+66)</option>
+      <option value="Vietnam" data-code="+84">Vietnam (+84)</option>
+      <option value="Australia" data-code="+61">Australia (+61)</option>
+      <option value="New Zealand" data-code="+64">New Zealand (+64)</option>
+      <option value="Germany" data-code="+49">Germany (+49)</option>
+      <option value="France" data-code="+33">France (+33)</option>
+      <option value="Italy" data-code="+39">Italy (+39)</option>
+      <option value="Spain" data-code="+34">Spain (+34)</option>
+      <option value="Portugal" data-code="+351">Portugal (+351)</option>
+      <option value="Netherlands" data-code="+31">Netherlands (+31)</option>
+      <option value="Belgium" data-code="+32">Belgium (+32)</option>
+      <option value="Switzerland" data-code="+41">Switzerland (+41)</option>
+      <option value="Austria" data-code="+43">Austria (+43)</option>
+      <option value="Ireland" data-code="+353">Ireland (+353)</option>
+      <option value="Sweden" data-code="+46">Sweden (+46)</option>
+      <option value="Norway" data-code="+47">Norway (+47)</option>
+      <option value="Denmark" data-code="+45">Denmark (+45)</option>
+      <option value="Finland" data-code="+358">Finland (+358)</option>
+      <option value="Poland" data-code="+48">Poland (+48)</option>
+      <option value="Greece" data-code="+30">Greece (+30)</option>
+      <option value="Turkey" data-code="+90">Turkey (+90)</option>
+      <option value="Ukraine" data-code="+380">Ukraine (+380)</option>
+      <option value="Russia" data-code="+7">Russia (+7)</option>
+      <option value="Brazil" data-code="+55">Brazil (+55)</option>
+      <option value="Mexico" data-code="+52">Mexico (+52)</option>
+      <option value="Argentina" data-code="+54">Argentina (+54)</option>
+      <option value="Colombia" data-code="+57">Colombia (+57)</option>
+      <option value="Jamaica" data-code="+1">Jamaica (+1)</option>
+      <option value="Trinidad and Tobago" data-code="+1">Trinidad and Tobago (+1)</option>
+      <option value="Other" data-code="">Other / enter full international number</option>
+    </select><label class="field-label" for="phone">WhatsApp number</label><input class="text-field" id="phone" type="tel" autocomplete="tel" placeholder="801 234 5678" value="${escapeAttr(answers.whatsapp||"")}" required><p class="hint">Enter your number without the country code. If you enter a number beginning with +, we'll keep its international format.</p><label class="field-label" for="email">Email address · optional</label><input class="text-field" id="email" type="email" autocomplete="email" placeholder="you@example.com" value="${escapeAttr(answers.email||"")}"><div class="actions"><button class="action-btn ghost" id="back" type="button">← Back</button><button class="action-btn" id="finish" type="button">Submit →</button></div>`;
+    const countrySelect = document.getElementById("country");
+    const customerCountrySelect = document.getElementById("customerCountry");
+    // Reuse the available country list while keeping residence country separate.
+    Array.from(countrySelect.options).forEach(option => {
+      if (option.value !== "Other") {
+        customerCountrySelect.add(new Option(option.textContent.split(" (")[0], option.value));
+      }
+    });
+    customerCountrySelect.value = answers.customer_country || "Nigeria";
+    if (answers.whatsapp_country) countrySelect.value = answers.whatsapp_country;
+    document.getElementById("finish").addEventListener("click",finish);
+  }
+  const back = document.getElementById("back");
+  if(back) back.addEventListener("click",()=>{current=Math.max(0,current-1);render(true)});
+  if(animate) animateQuestion();
+}
+function escapeAttr(value){return String(value).replace(/[&"<>']/g,c=>({"&":"&amp;",'"':"&quot;","<":"&lt;",">":"&gt;","'":"&#39;"}[c]));}
+function next(){current++;render(true)}
+function getAttribution(){
+  const params = new URLSearchParams(window.location.search);
+  const query = {};
+  for (const [key, value] of params.entries()) {
+    if (/^(utm_|gclid$|fbclid$|ttclid$|ref$)/i.test(key)) query[key] = value;
+  }
+
+  const currentTouch = {
+    landing_page: window.location.href,
+    referrer: document.referrer || null,
+    captured_at: new Date().toISOString(),
+    query
+  };
+
+  let firstTouch = currentTouch;
+  try {
+    const saved = localStorage.getItem("kona_waitlist_first_touch");
+    if (saved) firstTouch = JSON.parse(saved);
+    else localStorage.setItem("kona_waitlist_first_touch", JSON.stringify(currentTouch));
+    localStorage.setItem("kona_waitlist_latest_touch", JSON.stringify(currentTouch));
+  } catch (_) {
+    // Continue without persistent attribution if browser storage is unavailable.
+  }
+
+  let latestTouch = currentTouch;
+  try {
+    const savedLatest = localStorage.getItem("kona_waitlist_latest_touch");
+    if (savedLatest) latestTouch = JSON.parse(savedLatest);
+  } catch (_) {}
+
+  return { first_touch: firstTouch, latest_touch: latestTouch };
+}
+
+async function finish(){
+  const phone=document.getElementById("phone").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const customerCountry=document.getElementById("customerCountry").value;
+  const countrySelect=document.getElementById("country");
+  const selectedCountry=countrySelect.options[countrySelect.selectedIndex];
+  const countryName=selectedCountry.value;
+  const countryCode=selectedCountry.dataset.code || "";
+  if(!customerCountry){status.textContent="Please select the country where you are based.";return}
+  if(!phone){status.textContent="Please enter your WhatsApp number.";return}
+  if(countryName==="Other" && !phone.startsWith("+") && !phone.startsWith("00")){
+    status.textContent="For other countries, please include the full international number beginning with +.";
+    return;
+  }
+  if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){status.textContent="Please enter a valid email address.";return}
+
+  answers.customer_country=customerCountry;
+  answers.whatsapp=phone;
+  answers.whatsapp_country=countryName==="Other" ? "Other / not specified" : countryName;
+  answers.whatsapp_country_code=countryCode;
+  answers.email=email;
+
+  const button=document.getElementById("finish");
+  button.disabled=true;
+  button.textContent="Submitting…";
+  status.textContent="Securely submitting your details…";
+
+  try{
+    if(SUPABASE_URL.includes("YOUR_PROJECT_REF") || SUPABASE_ANON_KEY.includes("YOUR_SUPABASE")){
+      throw new Error("Supabase has not been configured yet. Please contact the site administrator.");
+    }
+
+    const attribution = getAttribution();
+    const payload = {
+      full_name: answers.full_name,
+      whatsapp_number: answers.whatsapp,
+      whatsapp_country: answers.whatsapp_country,
+      whatsapp_country_code: answers.whatsapp_country_code,
+      customer_country: answers.customer_country,
+      email: answers.email || null,
+      shoe_size: answers.shoe_size || null,
+      purchase_intent: answers.purchase_intent || null,
+      answers: {
+        brand_awareness: answers.brand_awareness || null,
+        product_interest: answers.product_interest || null
+      },
+      first_touch: attribution.first_touch,
+      latest_touch: attribution.latest_touch,
+      landing_page: window.location.href,
+      referrer: document.referrer || null
+    };
+
+    const response=await fetch(`${SUPABASE_URL.replace(/\/$/,"")}/functions/v1/${EDGE_FUNCTION_NAME}`,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization":`Bearer ${SUPABASE_ANON_KEY}`,
+        "apikey":SUPABASE_ANON_KEY
+      },
+      body:JSON.stringify(payload)
+    });
+
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok || result.success!==true){
+      if(result.code==="DUPLICATE_REGISTRATION"){
+        throw new Error("This WhatsApp number is already on the waitlist. If you think this is a mistake, please contact Bos’ Kọ́nà.");
+      }
+      throw new Error(result.message || result.error || "We couldn't submit your details. Please try again.");
+    }
+
+    stepNumber.textContent=questions.length.toString().padStart(2,"0")+" / "+questions.length.toString().padStart(2,"0");
+    progress.style.width="100%";
+
+    let confirmation = "Thank you, " + escapeHtml(answers.full_name) + ". Your registration has been received.";
+    if (result.early_bird_eligible === true && Number.isInteger(result.early_bird_position)) {
+      confirmation += `<p class="hint" style="margin-top:18px"></p><p class="hint">Your registration has been recorded for early-bird eligibility. ₦5,000 wallet credit will br deposited into your Kọ́nà wallet upon launccch .</p>`;
+    } else {
+      confirmation += `<p class="hint" style="margin-top:18px">The first 200 early-bird positions have been allocated. Your waitlist registration is still confirmed.</p>`;
+    }
+
+    area.innerHTML=`<div class="question-count">Bos’ Kọ́nà · Airform</div><div class="question" style="font-size:34px;color:var(--yellow)">You're on the list.</div><p class="hint">${confirmation}</p>`;
+    status.textContent="Your registration was submitted successfully.";
+setTimeout(() => {
+  window.location.href = "https://whatsapp.com/channel/0029VbBwfUx30LKK1Z3fA90g";
+}, 3000);
+  }catch(error){
+    button.disabled=false;
+    button.textContent="Try again →";
+    status.textContent=error.message || "Something went wrong. Please try again.";
+  }
+}
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+
+
+// Handle Supabase password-recovery links. Supabase places the recovery access token
+// and type=recovery in the URL hash after verifying the email link.
+(function initKonaPasswordRecovery(){
+  const hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+  const query = new URLSearchParams(window.location.search);
+  const type = hash.get('type') || query.get('type');
+  const accessToken = hash.get('access_token') || query.get('access_token');
+  const errorDescription = hash.get('error_description') || query.get('error_description');
+
+  if (type !== 'recovery') return;
+
+  document.body.classList.add('password-recovery-mode');
+  const app = document.getElementById('passwordRecoveryApp');
+  const form = document.getElementById('passwordRecoveryForm');
+  const message = document.getElementById('passwordRecoveryMessage');
+  const button = document.getElementById('passwordRecoveryButton');
+  const loginLink = document.getElementById('passwordRecoveryLoginLink');
+
+  if (errorDescription) {
+    message.textContent = decodeURIComponent(errorDescription.replace(/\+/g, ' '));
+    form.style.display = 'none';
+    return;
+  }
+
+  if (!accessToken) {
+    message.textContent = 'This recovery link is missing its verification token. Please request a fresh password-reset email and open the newest link.';
+    form.style.display = 'none';
+    return;
+  }
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const password = document.getElementById('newAdminPassword').value;
+    const confirm = document.getElementById('confirmAdminPassword').value;
+
+    if (password.length < 8) {
+      message.textContent = 'Please use a password with at least 8 characters.';
+      return;
+    }
+    if (password !== confirm) {
+      message.textContent = 'The passwords do not match. Please check them and try again.';
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = 'Saving…';
+    message.textContent = 'Updating your administrator password…';
+
+    try {
+      const response = await fetch(SUPABASE_URL + '/auth/v1/user', {
+        method: 'PUT',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': 'Bearer ' + accessToken,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ password })
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(result.msg || result.message || result.error_description || result.error || 'Supabase could not update the password. Please request a fresh recovery link.');
+      }
+
+      form.style.display = 'none';
+      message.textContent = 'Your administrator password has been updated successfully. You can now sign in to the dashboard.';
+      loginLink.style.display = 'inline-block';
+      // Remove the one-time recovery token from the browser address bar.
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } catch (error) {
+      message.textContent = error.message || 'Something went wrong. Please try again with a fresh recovery link.';
+      button.disabled = false;
+      button.textContent = 'Save new password';
+    }
+  });
+})();
+
+
+// Admin dashboard is activated only by ?mode=admin. Public waitlist behaviour remains unchanged.
+(function initKonaAdmin(){
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('mode') !== 'admin') return;
+  document.body.classList.add('admin-mode');
+  const ADMIN_UID = '2876e465-f82d-4b2f-ac5e-58a053f20b90';
+  const login = document.getElementById('adminLogin');
+  const content = document.getElementById('adminContent');
+  const loginForm = document.getElementById('adminLoginForm');
+  const loginMessage = document.getElementById('adminLoginMessage');
+  const loginButton = document.getElementById('adminLoginButton');
+  const refreshButton = document.getElementById('adminRefresh');
+  const exportButton = document.getElementById('adminExport');
+  const logoutButton = document.getElementById('adminLogout');
+  const sessionKey = 'kona_admin_session_v1';
+  let session = null;
+  let leads = [];
+  let visibleLeads = [];
+  let activeTab = 'overview';
+
+  const el = id => document.getElementById(id);
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmt = n => Number(n || 0).toLocaleString();
+  const dateFmt = value => { if(!value) return '—'; const d=new Date(value); return isNaN(d)?'—':d.toLocaleDateString(undefined,{day:'2-digit',month:'short',year:'numeric'}); };
+  const timeFmt = value => { if(!value) return '—'; const d=new Date(value); return isNaN(d)?'—':d.toLocaleString(); };
+  function readSession(){try{session=JSON.parse(sessionStorage.getItem(sessionKey)||'null')}catch(_){session=null}}
+  function saveSession(value){session=value;sessionStorage.setItem(sessionKey,JSON.stringify(value))}
+  function clearSession(){session=null;sessionStorage.removeItem(sessionKey)}
+  function authHeaders(){return {'apikey':SUPABASE_ANON_KEY,'Authorization':'Bearer '+session.access_token,'Content-Type':'application/json'}}
+  async function signIn(email,password){
+    const r=await fetch(SUPABASE_URL+'/auth/v1/token?grant_type=password',{method:'POST',headers:{'apikey':SUPABASE_ANON_KEY,'Content-Type':'application/json'},body:JSON.stringify({email,password})});
+    const data=await r.json().catch(()=>({}));
+    if(!r.ok) throw new Error(data.msg||data.message||data.error_description||'Sign-in failed. Check your email and password.');
+    if(!data.user || data.user.id!==ADMIN_UID) throw new Error('This account is not authorised for the Kọ́nà administrator dashboard.');
+    saveSession({access_token:data.access_token,refresh_token:data.refresh_token,expires_at:Date.now()+(Number(data.expires_in||3600)*1000),user:data.user});
+  }
+  async function refreshSession(){
+    if(!session?.refresh_token) throw new Error('Your session has expired. Please sign in again.');
+    const r=await fetch(SUPABASE_URL+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{'apikey':SUPABASE_ANON_KEY,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:session.refresh_token})});
+    const data=await r.json().catch(()=>({}));
+    if(!r.ok || data.user?.id!==ADMIN_UID) throw new Error('Your session has expired. Please sign in again.');
+    saveSession({access_token:data.access_token,refresh_token:data.refresh_token,expires_at:Date.now()+(Number(data.expires_in||3600)*1000),user:data.user});
+  }
+  async function ensureFresh(){if(!session) throw new Error('Please sign in again.');if(Date.now()>session.expires_at-60000) await refreshSession();}
+  async function apiGet(path,retried=false){
+    await ensureFresh();
+    const r=await fetch(SUPABASE_URL+'/rest/v1/'+path,{headers:authHeaders()});
+    if(r.status===401 && !retried){await refreshSession();return apiGet(path,true)}
+    const data=await r.json().catch(()=>({}));
+    if(!r.ok) throw new Error(data.message||data.hint||'Could not load dashboard data.');
+    return data;
+  }
+  async function loadLeads(){
+    let all=[],offset=0,batch=1000;
+    const columns='id,created_at,full_name,whatsapp_number,email,shoe_size,purchase_intent,answers,first_touch,latest_touch,early_bird_position,whatsapp_country,customer_country';
+    while(true){
+      const rows=await apiGet('waitlist_registrations?select='+columns+'&order=created_at.desc&limit='+batch+'&offset='+offset);
+      all=all.concat(Array.isArray(rows)?rows:[]);
+      if(!Array.isArray(rows)||rows.length<batch) break;
+      offset+=batch;
+      if(offset>=100000) break;
+    }
+    leads=all;
+    renderDashboard();
+  }
+  function intentOf(row){
+    const v=String(row.purchase_intent||'').toLowerCase();
+    if(v.includes('purchasing at launch')) return 'ready';
+    if(v.includes('need more information')) return 'warm';
+    if(v.includes('exploring')) return 'exploring';
+    return 'unknown';
+  }
+  const intentLabel = key => ({ready:'Ready to purchase',warm:'Interested · needs information',exploring:'Exploring',unknown:'Unclassified'})[key]||'Unclassified';
+  const intentPill = key => '<span class="admin-pill '+(key==='ready'?'ready':key==='warm'?'warm':key==='exploring'?'exploring':'')+'">'+esc(intentLabel(key))+'</span>';
+  function touchValue(row,mode){return row?.[mode] && typeof row[mode]==='object' ? row[mode] : {}}
+  function touchQuery(t){return t?.query && typeof t.query==='object'?t.query:{}}
+  function touchField(row,mode,key){const t=touchValue(row,mode),q=touchQuery(t);return q[key]||t[key]||''}
+  function sourceName(row,mode){const t=touchValue(row,mode);const tagged=touchField(row,mode,'utm_source')||touchField(row,mode,'source');if(tagged)return tagged;try{if(t.referrer)return new URL(t.referrer).hostname.replace(/^www\./,'')}catch(_){}return 'Direct / untagged'}
+  function contentName(row,mode){return touchField(row,mode,'utm_content')||touchField(row,mode,'content')||'No post ID'}
+  function campaignName(row,mode){return touchField(row,mode,'utm_campaign')||touchField(row,mode,'campaign')||'No campaign'}
+  function groupCount(rows,fn){const m=new Map();rows.forEach(r=>{const k=String(fn(r)||'Not specified');m.set(k,(m.get(k)||0)+1)});return [...m.entries()].sort((a,b)=>b[1]-a[1])}
+  function bars(targetId,entries,empty='No data recorded yet.'){const target=el(targetId);if(!entries.length){target.innerHTML='<div class="admin-empty">'+esc(empty)+'</div>';return}const max=Math.max(1,...entries.map(x=>x[1]));target.innerHTML=entries.slice(0,12).map(([label,n])=>'<div class="admin-bar-row"><div class="admin-bar-label" title="'+esc(label)+'">'+esc(label)+'</div><div class="admin-track"><div class="admin-fill" style="width:'+Math.max(1,n/max*100)+'%"></div></div><div class="admin-bar-count">'+fmt(n)+'</div></div>').join('')}
+  function listRows(targetId,entries){const t=el(targetId);t.innerHTML=entries.length?entries.slice(0,12).map(([a,b])=>'<div class="admin-list-item"><span>'+esc(a)+'</span><span>'+fmt(b)+'</span></div>').join(''):'<div class="admin-empty">No data recorded yet.</div>'}
+  function donutMarkup(counts,total){const ready=counts.ready||0,warm=counts.warm||0,exploring=counts.exploring||0,unknown=counts.unknown||0;const safe=total||1;const a=ready/safe*100,b=(ready+warm)/safe*100,c=(ready+warm+exploring)/safe*100;return '<div class="admin-donut-wrap"><div class="admin-donut" style="background:conic-gradient(#f2d400 0% '+a+'%,#d79b36 '+a+'% '+b+'%,#777 '+b+'% '+c+'%,#444 '+c+'% 100%)"><div class="admin-donut-center">'+fmt(total)+'<small>Leads</small></div></div><div class="admin-legend"><div><i class="admin-dot"></i>Ready to purchase · '+fmt(ready)+'</div><div><i class="admin-dot warm"></i>Needs information · '+fmt(warm)+'</div><div><i class="admin-dot explore"></i>Exploring · '+fmt(exploring)+'</div><div><i class="admin-dot unknown"></i>Unclassified · '+fmt(unknown)+'</div></div></div>'}
+  function intentCounts(rows){const out={ready:0,warm:0,exploring:0,unknown:0};rows.forEach(r=>out[intentOf(r)]++);return out}
+  function renderOverview(){
+    const counts=intentCounts(leads),now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),week=new Date(today);week.setDate(week.getDate()-6);
+    const todayCount=leads.filter(r=>r.created_at&&new Date(r.created_at)>=today).length,weekCount=leads.filter(r=>r.created_at&&new Date(r.created_at)>=week).length;
+    const allocated=leads.filter(r=>Number(r.early_bird_position)>=1&&Number(r.early_bird_position)<=200).length;
+    el('overviewCards').innerHTML=[['Total registrations',leads.length,'All successful waitlist records'],['Registered today',todayCount,'Based on local calendar date'],['Last 7 days',weekCount,'Including today'],['Ready to purchase',counts.ready,'Explicit launch purchase intention'],['Warm leads',counts.warm,'Interested, needs more information'],['Exploring',counts.exploring,'Early-stage interest'],['Early-bird allocated',allocated,'Recorded positions from 1 to 200'],['Early-bird remaining',Math.max(0,200-allocated),'Of the first 200 positions']].map(x=>'<div class="admin-card"><div class="k">'+esc(x[0])+'</div><div class="v">'+fmt(x[1])+'</div><div class="s">'+esc(x[2])+'</div></div>').join('');
+    const dayRows=[];for(let i=13;i>=0;i--){const d=new Date(today);d.setDate(d.getDate()-i);const key=d.toISOString().slice(0,10);dayRows.push([d.toLocaleDateString(undefined,{day:'2-digit',month:'short'}),leads.filter(r=>String(r.created_at||'').slice(0,10)===key).length])}bars('registrationTrend',dayRows,'No registrations in the selected period.');
+    el('overviewIntent').innerHTML=donutMarkup(counts,leads.length);
+    el('latestLeads').innerHTML=leadTable(leads.slice(0,8),false);
+  }
+  function leadTable(rows,withControls=true){if(!rows.length)return '<div class="admin-empty">No registrations match these filters.</div>';return '<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>Customer country</th><th>Purchase intent</th><th>Lead classification</th><th>First-touch source</th><th>Early-bird</th><th>Registered</th></tr></thead><tbody>'+rows.map(r=>'<tr data-lead="'+esc(r.id)+'"><td><strong>'+esc(r.full_name||'—')+'</strong><br><span style="color:#888">'+esc(r.whatsapp_number||'')+'</span></td><td>'+esc(r.customer_country||'—')+'</td><td>'+esc(r.purchase_intent||'—')+'</td><td>'+intentPill(intentOf(r))+'</td><td>'+esc(sourceName(r,'first_touch'))+'</td><td>'+(r.early_bird_position?('#'+esc(r.early_bird_position)):'—')+'</td><td>'+esc(dateFmt(r.created_at))+'</td></tr>').join('')+'</tbody></table></div>'}
+  function renderLeads(){
+    const countries=[...new Set(leads.map(r=>r.customer_country).filter(Boolean))].sort();const filter=el('leadCountryFilter');const old=filter.value;filter.innerHTML='<option value="all">All customer countries</option>'+countries.map(c=>'<option value="'+esc(c)+'">'+esc(c)+'</option>').join('');if(countries.includes(old))filter.value=old;
+    const q=(el('leadSearch').value||'').toLowerCase(),cat=el('leadIntentFilter').value,country=filter.value;
+    visibleLeads=leads.filter(r=>{const hay=[r.full_name,r.whatsapp_number,r.email,r.customer_country,r.whatsapp_country,sourceName(r,'first_touch'),contentName(r,'first_touch')].join(' ').toLowerCase();return (!q||hay.includes(q))&&(cat==='all'||intentOf(r)===cat)&&(country==='all'||r.customer_country===country)});
+    el('leadsTable').innerHTML=leadTable(visibleLeads);
+  }
+  function renderMarketing(){const mode=el('touchMode').value;bars('sourceBars',groupCount(leads,r=>sourceName(r,mode)));bars('contentBars',groupCount(leads,r=>contentName(r,mode)));listRows('campaignList',groupCount(leads,r=>campaignName(r,mode)));const readyGroups=new Map();leads.filter(r=>intentOf(r)==='ready').forEach(r=>{const k=sourceName(r,'first_touch');readyGroups.set(k,(readyGroups.get(k)||0)+1)});listRows('sourceReadyList',[...readyGroups.entries()].sort((a,b)=>b[1]-a[1]));}
+  function renderGeography(){bars('customerCountryBars',groupCount(leads,r=>r.customer_country||'Not provided'));bars('whatsappCountryBars',groupCount(leads,r=>r.whatsapp_country||'Not provided'))}
+  function renderIntent(){const counts=intentCounts(leads);el('intentBreakdown').innerHTML=donutMarkup(counts,leads.length)+'<div class="admin-two" style="margin-top:22px"><div class="admin-card"><div class="k">Explicitly interested</div><div class="v">'+fmt(counts.ready+counts.warm)+'</div><div class="s">Ready to purchase plus interested, needs information.</div></div><div class="admin-card"><div class="k">Exploring</div><div class="v">'+fmt(counts.exploring)+'</div><div class="s">Not classified as uninterested; the form does not ask that question.</div></div></div>';const m=new Map();leads.filter(r=>intentOf(r)==='ready'||intentOf(r)==='warm').forEach(r=>{const k=sourceName(r,'first_touch');const v=m.get(k)||{ready:0,warm:0};v[intentOf(r)]++;m.set(k,v)});const arr=[...m.entries()].sort((a,b)=>(b[1].ready+b[1].warm)-(a[1].ready+a[1].warm));el('intentSourceBars').innerHTML=arr.length?arr.map(([name,v])=>'<div class="admin-bar-row" style="grid-template-columns:minmax(100px,1fr) 2fr 70px"><div class="admin-bar-label">'+esc(name)+'</div><div class="admin-track" style="display:flex"><div style="height:100%;background:#f2d400;width:'+(v.ready/Math.max(1,v.ready+v.warm)*100)+'%"></div><div style="height:100%;background:#d79b36;flex:1"></div></div><div class="admin-bar-count">'+fmt(v.ready+v.warm)+'</div></div>').join(''):'<div class="admin-empty">No classified interest by source yet.</div>'}
+  function renderProduct(){bars('productInterestBars',groupCount(leads,r=>r.answers?.product_interest||'Not answered'));bars('shoeSizeBars',groupCount(leads,r=>r.shoe_size||'Not answered'));bars('brandAwarenessBars',groupCount(leads,r=>r.answers?.brand_awareness||'Not answered'))}
+  function renderEarlyBird(){const allocated=leads.filter(r=>Number(r.early_bird_position)>=1&&Number(r.early_bird_position)<=200).sort((a,b)=>Number(a.early_bird_position)-Number(b.early_bird_position));const remaining=Math.max(0,200-allocated.length);el('earlyBirdCards').innerHTML=[['Allocated positions',allocated.length,'Recorded early-bird registrations'],['Remaining positions',remaining,'Out of 200'],['Threshold status',remaining===0?'Reached':'Open',remaining===0?'All positions allocated':'Positions still available']].map(x=>'<div class="admin-card"><div class="k">'+esc(x[0])+'</div><div class="v" style="font-size:29px">'+esc(x[1])+'</div><div class="s">'+esc(x[2])+'</div></div>').join('');el('earlyBirdTable').innerHTML=allocated.length?'<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Position</th><th>Name</th><th>WhatsApp</th><th>Country</th><th>Registration date</th></tr></thead><tbody>'+allocated.map(r=>'<tr data-lead="'+esc(r.id)+'"><td>#'+esc(r.early_bird_position)+'</td><td>'+esc(r.full_name)+'</td><td>'+esc(r.whatsapp_number)+'</td><td>'+esc(r.customer_country||'—')+'</td><td>'+esc(dateFmt(r.created_at))+'</td></tr>').join('')+'</tbody></table></div>':'<div class="admin-empty">No early-bird positions have been recorded yet.</div>'}
+  function renderDashboard(){renderOverview();renderLeads();renderMarketing();renderGeography();renderIntent();renderProduct();renderEarlyBird();el('adminUpdatedAt').textContent='Last refreshed '+new Date().toLocaleString()+' · '+fmt(leads.length)+' registrations loaded.';}
+  function showApp(){login.style.display='none';content.style.display='block';refreshButton.style.display='inline-block';exportButton.style.display='inline-block';logoutButton.style.display='inline-block'}
+  function showLogin(message=''){login.style.display='block';content.style.display='none';refreshButton.style.display='none';exportButton.style.display='none';logoutButton.style.display='none';loginMessage.textContent=message}
+  async function refresh(){refreshButton.disabled=true;refreshButton.textContent='Loading…';try{await loadLeads()}catch(e){if(/expired|sign in/i.test(e.message)){clearSession();showLogin(e.message)}else alert(e.message)}finally{refreshButton.disabled=false;refreshButton.textContent='Refresh data'}}
+  function exportCsv(){const rows=activeTab==='leads'?visibleLeads:leads;const cols=['created_at','full_name','whatsapp_number','email','customer_country','whatsapp_country','shoe_size','purchase_intent','lead_classification','brand_awareness','product_interest','first_touch_source','first_touch_medium','first_touch_campaign','first_touch_content','latest_touch_source','latest_touch_campaign','latest_touch_content','early_bird_position'];const quote=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const lines=[cols.map(quote).join(',')];rows.forEach(r=>{const q=r.answers||{};lines.push([r.created_at,r.full_name,r.whatsapp_number,r.email,r.customer_country,r.whatsapp_country,r.shoe_size,r.purchase_intent,intentLabel(intentOf(r)),q.brand_awareness,q.product_interest,touchField(r,'first_touch','utm_source'),touchField(r,'first_touch','utm_medium'),campaignName(r,'first_touch'),contentName(r,'first_touch'),touchField(r,'latest_touch','utm_source'),campaignName(r,'latest_touch'),contentName(r,'latest_touch'),r.early_bird_position].map(quote).join(','))});const blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='kona-waitlist-'+new Date().toISOString().slice(0,10)+'.csv';a.click();URL.revokeObjectURL(url)}
+  function openLead(id){const r=leads.find(x=>String(x.id)===String(id));if(!r)return;const q=r.answers||{},ft=touchValue(r,'first_touch'),lt=touchValue(r,'latest_touch');el('leadModalTitle').textContent=r.full_name||'Lead details';const fields=[['WhatsApp',r.whatsapp_number],['Email',r.email],['Customer country',r.customer_country],['WhatsApp country',r.whatsapp_country],['Shoe size',r.shoe_size],['Original purchase-intent answer',r.purchase_intent],['Dashboard classification',intentLabel(intentOf(r))],['Brand awareness',q.brand_awareness],['Product attraction',q.product_interest],['Early-bird position',r.early_bird_position?'#'+r.early_bird_position:'Not allocated'],['First-touch source',sourceName(r,'first_touch')],['First-touch campaign',campaignName(r,'first_touch')],['First-touch post / advert',contentName(r,'first_touch')],['First-touch landing page',ft.landing_page],['Latest-touch source',sourceName(r,'latest_touch')],['Latest-touch campaign',campaignName(r,'latest_touch')],['Latest-touch post / advert',contentName(r,'latest_touch')],['Registered',timeFmt(r.created_at)]];el('leadDetails').innerHTML=fields.map(([k,v])=>'<div class="admin-detail"><small>'+esc(k)+'</small><div>'+esc(v||'—')+'</div></div>').join('');el('leadModal').classList.add('open')}
+  loginForm.addEventListener('submit',async e=>{e.preventDefault();loginButton.disabled=true;loginButton.textContent='Signing in…';loginMessage.textContent='';try{await signIn(el('adminEmail').value.trim(),el('adminPassword').value);showApp();await loadLeads()}catch(err){clearSession();showLogin(err.message)}finally{loginButton.disabled=false;loginButton.textContent='Sign in to dashboard'}});
+  refreshButton.addEventListener('click',refresh);exportButton.addEventListener('click',exportCsv);logoutButton.addEventListener('click',()=>{clearSession();showLogin('You have signed out.')});
+  document.querySelectorAll('.admin-tab').forEach(btn=>btn.addEventListener('click',()=>{activeTab=btn.dataset.tab;document.querySelectorAll('.admin-tab').forEach(x=>x.classList.toggle('active',x===btn));document.querySelectorAll('.admin-panel').forEach(x=>x.classList.toggle('active',x.id==='panel-'+activeTab));}));
+  ['leadSearch','leadIntentFilter','leadCountryFilter'].forEach(id=>el(id).addEventListener('input',renderLeads));el('touchMode').addEventListener('change',renderMarketing);
+  document.addEventListener('click',e=>{const row=e.target.closest('[data-lead]');if(row)openLead(row.dataset.lead)});el('closeLeadModal').addEventListener('click',()=>el('leadModal').classList.remove('open'));el('leadModal').addEventListener('click',e=>{if(e.target===el('leadModal'))el('leadModal').classList.remove('open')});
+  readSession();
+  if(session?.user?.id===ADMIN_UID){showApp();loadLeads().catch(e=>{clearSession();showLogin(e.message)})}else{clearSession();showLogin()}
+})();
+
+</script>
+</body>
+</html>
