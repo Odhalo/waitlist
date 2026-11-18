@@ -233,13 +233,13 @@ body.password-recovery-mode #passwordRecoveryApp{display:block!important;min-hei
 <script>
 /*
   SUPABASE SETUP
-  1. Replace the two values below with your Supabase project URL and anon/publishable key.
-  2. Deploy an Edge Function named "submit-waitlist" that validates and stores the submitted payload.
-  3. The function should return { "success": true } on success.
-  Keep privileged service-role keys inside the Edge Function only — never in this page.
+  The waitlist lives in the Bos' Kọ́nà shop's Supabase project (Kokoka Factories):
+  sign-ups go through its "submit-waitlist" Edge Function into
+  waitlist_registrations, which only shop admins can read. The key below is the
+  project's public anon key; privileged keys stay inside the Edge Function.
 */
-const SUPABASE_URL = "https://gdaabyeqocnrapfewzrx.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_plVi7NnICCPSvwm-y8LIHA_3aEpmUIE";
+const SUPABASE_URL = "https://suqxagagdklzluhsljrv.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1cXhhZ2FnZGtsemx1aHNsanJ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc2ODcwMzQsImV4cCI6MjA2MzI2MzAzNH0.HKYHdnBNpowdtU2hZ1Ts4n-8MpaRLPPMDOqSMbzVfMY";
 const EDGE_FUNCTION_NAME = "submit-waitlist";
 
 const questions = [
@@ -481,7 +481,7 @@ async function finish(){
 
     let confirmation = "Thank you, " + escapeHtml(answers.full_name) + ". Your registration has been received.";
     if (result.early_bird_eligible === true && Number.isInteger(result.early_bird_position)) {
-      confirmation += `<p class="hint" style="margin-top:18px"></p><p class="hint">Your registration has been recorded for early-bird eligibility. ₦5,000 wallet credit will br deposited into your Kọ́nà wallet upon launccch .</p>`;
+      confirmation += `<p class="hint" style="margin-top:18px"></p><p class="hint">Your registration has been recorded for early-bird eligibility. ₦5,000 wallet credit will be deposited into your Kọ́nà wallet at launch.</p>`;
     } else {
       confirmation += `<p class="hint" style="margin-top:18px">The first 200 early-bird positions have been allocated. Your waitlist registration is still confirmed.</p>`;
     }
@@ -583,7 +583,6 @@ function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&am
   const params = new URLSearchParams(window.location.search);
   if (params.get('mode') !== 'admin') return;
   document.body.classList.add('admin-mode');
-  const ADMIN_UID = '2876e465-f82d-4b2f-ac5e-58a053f20b90';
   const login = document.getElementById('adminLogin');
   const content = document.getElementById('adminContent');
   const loginForm = document.getElementById('adminLoginForm');
@@ -607,18 +606,24 @@ function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&am
   function saveSession(value){session=value;sessionStorage.setItem(sessionKey,JSON.stringify(value))}
   function clearSession(){session=null;sessionStorage.removeItem(sessionKey)}
   function authHeaders(){return {'apikey':SUPABASE_ANON_KEY,'Authorization':'Bearer '+session.access_token,'Content-Type':'application/json'}}
+  // The shop's own admin check. The database enforces it too: only admins can
+  // read waitlist_registrations, whatever this page shows.
+  async function isAdmin(accessToken){
+    const r=await fetch(SUPABASE_URL+'/rest/v1/rpc/is_admin_user',{method:'POST',headers:{'apikey':SUPABASE_ANON_KEY,'Authorization':'Bearer '+accessToken,'Content-Type':'application/json'},body:'{}'});
+    return r.ok && (await r.json().catch(()=>false))===true;
+  }
   async function signIn(email,password){
     const r=await fetch(SUPABASE_URL+'/auth/v1/token?grant_type=password',{method:'POST',headers:{'apikey':SUPABASE_ANON_KEY,'Content-Type':'application/json'},body:JSON.stringify({email,password})});
     const data=await r.json().catch(()=>({}));
     if(!r.ok) throw new Error(data.msg||data.message||data.error_description||'Sign-in failed. Check your email and password.');
-    if(!data.user || data.user.id!==ADMIN_UID) throw new Error('This account is not authorised for the Kọ́nà administrator dashboard.');
+    if(!data.user || !(await isAdmin(data.access_token))) throw new Error('This account is not authorised for the Kọ́nà administrator dashboard.');
     saveSession({access_token:data.access_token,refresh_token:data.refresh_token,expires_at:Date.now()+(Number(data.expires_in||3600)*1000),user:data.user});
   }
   async function refreshSession(){
     if(!session?.refresh_token) throw new Error('Your session has expired. Please sign in again.');
     const r=await fetch(SUPABASE_URL+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{'apikey':SUPABASE_ANON_KEY,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:session.refresh_token})});
     const data=await r.json().catch(()=>({}));
-    if(!r.ok || data.user?.id!==ADMIN_UID) throw new Error('Your session has expired. Please sign in again.');
+    if(!r.ok || !data.user) throw new Error('Your session has expired. Please sign in again.');
     saveSession({access_token:data.access_token,refresh_token:data.refresh_token,expires_at:Date.now()+(Number(data.expires_in||3600)*1000),user:data.user});
   }
   async function ensureFresh(){if(!session) throw new Error('Please sign in again.');if(Date.now()>session.expires_at-60000) await refreshSession();}
@@ -696,7 +701,7 @@ function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&am
   ['leadSearch','leadIntentFilter','leadCountryFilter'].forEach(id=>el(id).addEventListener('input',renderLeads));el('touchMode').addEventListener('change',renderMarketing);
   document.addEventListener('click',e=>{const row=e.target.closest('[data-lead]');if(row)openLead(row.dataset.lead)});el('closeLeadModal').addEventListener('click',()=>el('leadModal').classList.remove('open'));el('leadModal').addEventListener('click',e=>{if(e.target===el('leadModal'))el('leadModal').classList.remove('open')});
   readSession();
-  if(session?.user?.id===ADMIN_UID){showApp();loadLeads().catch(e=>{clearSession();showLogin(e.message)})}else{clearSession();showLogin()}
+  if(session?.user){showApp();loadLeads().catch(e=>{clearSession();showLogin(e.message)})}else{clearSession();showLogin()}
 })();
 
 </script>
